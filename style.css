@@ -1,0 +1,321 @@
+
+ :root {
+  --font-color: #21243D; 
+  --menu-bg-color: white; 
+  --menu-shadow-color: rgba(0, 0, 0, 0.1);
+  --icon-size: 1.8rem; 
+  --menu-padding: 10px; 
+  --menu-width: 100%; 
+  --menu-top: 60px; 
+  --menu-z-index: 200; 
+  --header-padding: 30px 20px;
+  --button-bg-color: #FF6464;
+  --button-hover-bg-color: #f94e4e;
+  --footer-bg-color: #f4f4f4;
+  --footer-font-color: #777;
+  --footer-link-color: #333;
+  --recent-post-bg-color: #EDF7FA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+.menu-icon {
+  display: none;
+}
+
+body {
+  height: 100%;
+  line-height: 1.6;
+}
+
+.menu-icon {
+  height: 18px;
+}
+
+header {
+  padding: var(--header-padding);
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 20px;
+  gap: 2rem;
+}
+
+.intro h1 {
+  font-size: 2.5em;
+}
+
+.intro_sec {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-left: 4rem;
+}
+
+.profile_photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.profile_photo img {
+  height: auto;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.intro button {
+  margin-top: 20px;
+  height: 47px;
+  width: 208px;
+  background: var(--button-bg-color);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  animation: 0.5s infinite anim;
+  border: #21243D;
+}
+
+@keyframes anim {
+  0%{transform:rotateY(0);}
+  100%{transform:rotateY(20deg);}
+
+}
+
+.intro button:hover {
+  background: var(--button-hover-bg-color);
+}
+
+.recent-posts {
+  background-color: var(--recent-post-bg-color);
+  padding: 20px;
+}
+
+.recent-posts h3 {
+  margin-left: 100px;
+  font-size: 1.8em;
+}
+
+.boxes {
+  display: flex;
+}
+
+.posts {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.posts article {
+  width: 45rem;
+  height: 295px;
+}
+
+article {
+  background: var(--menu-bg-color);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+article h4 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+article p {
+  margin-top: 10px;
+}
+
+.featured-works {
+  padding: 90px;
+}
+
+.featured-works .featured_boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.featured-works .featured_sec {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.featured-photo {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.featured-works h4 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.featured-works p {
+  margin: 0.5rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--footer-bg-color);
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--footer-link-color);
+}
+
+footer p {
+  margin: 10px 0 0;
+  color: var(--footer-font-color);
+}
+
+@media (max-width: 768px) {
+  .posts, .works {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  article {
+    min-width: 100%;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .intro_sec {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile_photo img {
+    max-width: 100%;
+  }
+
+  .featured-works .featured_boxes {
+    gap: 1.5rem;
+  }
+
+  .featured-works .featured_sec {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .featured-photo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .recent-posts h3 {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .posts {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  header nav ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: var(--icon-size);
+    cursor: pointer;
+    color: var(--font-color);
+  }
+}
+
+@media (max-width: 576px) {
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+  }
+
+  .intro button {
+    width: 100%;
+  }
+
+  .featured-photo {
+    max-width: 90%;
+  }
+
+  article {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro h1 {
+    font-size: 1.8em;
+  }
+
+  .intro button {
+    height: 40px;
+    font-size: 0.9em;
+  }
+
+  .posts article {
+    width: 100%;
+  }
+
+  .featured-photo {
+    max-width: 80%;
+  }
+
+  footer .social-icons a {
+    font-size: 0.9em;
+  }
+}
